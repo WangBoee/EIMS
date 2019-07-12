@@ -1,5 +1,5 @@
 ﻿#include "Functions.h"
-
+//修正编码
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
 
