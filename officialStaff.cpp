@@ -120,7 +120,7 @@ Officialstaff::Officialstaff(string p_num, string p_name, bool p_sex, int p_age,
 }
 
 //拷贝构造函数
-Officialstaff::Officialstaff(const Officialstaff& T)
+Officialstaff::Officialstaff(Officialstaff& T)
 {
 	m_num = T.m_num;
 	m_name = T.m_name;
@@ -137,22 +137,22 @@ Officialstaff::Officialstaff(const Officialstaff& T)
 }
 
 //移动构造函数
-//Officialstaff::Officialstaff(const Officialstaff&& T)
-//{
-//	m_num = T.m_num;
-//	m_name = T.m_name;
-//	m_sex = T.m_sex;
-//	m_age = T.m_age;
-//	m_salary = T.m_salary;
-//	m_home = T.m_home;
-//	m_allowance = T.m_allowance;
-//	m_annuity = T.m_annuity;
-//	m_fund = T.m_fund;
-//	m_tax = T.m_tax;
-//}
+Officialstaff::Officialstaff(Officialstaff&& T)
+{
+	m_num = T.m_num;
+	m_name = T.m_name;
+	m_sex = T.m_sex;
+	m_age = T.m_age;
+	m_salary = T.m_salary;
+	m_home = T.m_home;
+	m_allowance = T.m_allowance;
+	m_annuity = T.m_annuity;
+	m_fund = T.m_fund;
+	m_tax = T.m_tax;
+}
 
 //重载 = 运算符
-Officialstaff& Officialstaff::operator=(const Officialstaff& T)
+Officialstaff& Officialstaff::operator=(Officialstaff& T)
 {
 	m_num = T.m_num;
 	m_name = T.m_name;
@@ -166,25 +166,12 @@ Officialstaff& Officialstaff::operator=(const Officialstaff& T)
 	m_tax = T.m_tax;
 	m_medical = T.m_medical;
 	m_real_salary = T.m_real_salary;
-	return *this;
 }
 
 //计算员工实发工资
 void Officialstaff::m_calculateSalary()
 {
 	m_real_salary = m_allowance + m_salary - m_annuity - m_fund - m_tax - m_medical;
-}
-
-//获取员工编号
-string Officialstaff::m_get_num()
-{
-	return m_num;
-}
-
-//获取员工姓名
-string Officialstaff::m_get_name()
-{
-	return m_name;
 }
 
 //析构函数

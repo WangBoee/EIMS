@@ -62,16 +62,6 @@ void Tempstaff::m_calculateSalary()
 	m_real_salary = m_salary + m_bonus - m_tax;
 }
 
-string Tempstaff::m_get_num()
-{
-	return m_num;
-}
-
-string Tempstaff::m_get_name()
-{
-	return m_name;
-}
-
 //void Tempstaff::operator=(const Tempstaff& tmp)
 //{
 //	m_num = tmp.m_num;
@@ -119,7 +109,7 @@ Tempstaff::Tempstaff(string p_num, string p_name, bool p_sex, int p_age, float p
 }
 
 //拷贝构造函数
-Tempstaff::Tempstaff(const Tempstaff& T)
+Tempstaff::Tempstaff(Tempstaff& T)
 {
 	m_num = T.m_num;
 	m_name = T.m_name;
@@ -132,7 +122,7 @@ Tempstaff::Tempstaff(const Tempstaff& T)
 }
 
 //重载 = 运算符
-Tempstaff& Tempstaff::operator=(const Tempstaff& T)
+Tempstaff& Tempstaff::operator=(Tempstaff& T)
 {
 	m_num = T.m_num;
 	m_name = T.m_name;
@@ -142,21 +132,20 @@ Tempstaff& Tempstaff::operator=(const Tempstaff& T)
 	m_bonus = T.m_bonus;
 	m_tax = T.m_tax;
 	m_real_salary = T.m_real_salary;
-	return *this;
 }
 
 //移动构造函数
-//Tempstaff::Tempstaff(Tempstaff&& T)
-//{
-//	m_num = T.m_num;
-//	m_name = T.m_name;
-//	m_sex = T.m_sex;
-//	m_salary = T.m_salary;
-//	m_home = T.m_home;
-//	m_bonus = T.m_bonus;
-//	m_tax = T.m_tax;
-//	m_real_salary = T.m_real_salary;
-//}
+Tempstaff::Tempstaff(Tempstaff&& T)
+{
+	m_num = T.m_num;
+	m_name = T.m_name;
+	m_sex = T.m_sex;
+	m_salary = T.m_salary;
+	m_home = T.m_home;
+	m_bonus = T.m_bonus;
+	m_tax = T.m_tax;
+	m_real_salary = T.m_real_salary;
+}
 
 //析构函数
 Tempstaff::~Tempstaff()

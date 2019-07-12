@@ -126,17 +126,13 @@
     <ClCompile Include="EIMS.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="officialStaff.cpp" />
-    <ClCompile Include="readFile.cpp" />
     <ClCompile Include="tempStaff.cpp" />
-    <ClCompile Include="writeFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Functions.h" />
     <ClInclude Include="officialStaff.h" />
     <ClInclude Include="Staff.h" />
     <ClInclude Include="tempStaff.h" />
-    <ClInclude Include="readFile.h" />
-    <ClInclude Include="writeFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
