@@ -1,4 +1,5 @@
-#include <iostream>
+﻿#include "Functions.h"
+
 void print(const string& str)
 {
 	for (auto i : str)

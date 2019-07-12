@@ -1,46 +1,49 @@
-#include <iostream>
-#include <string.h>
+ï»¿#include "Functions.h"
+
+extern vector<Tempstaff> tStaffList;
+extern vector<Officialstaff> oStaffList;
+
 void deleteStaff()
 {
 	/*	TO DO:
-	0.²¹È«×¢ÊÍ
-	1.Èİ´í´¦Àí
-	2.¸ù¾İ¶àÖÖ·½Ê½²éÕÒ£¨±àºÅ£¬ĞÕÃû£©
-	3.Ô±¹¤ÀàĞÍÊäÈë´íÎó ´¦ÀíÂß¼­
+	0.è¡¥å…¨æ³¨é‡Š
+	1.å®¹é”™å¤„ç†
+	2.æ ¹æ®å¤šç§æ–¹å¼æŸ¥æ‰¾ï¼ˆç¼–å·ï¼Œå§“åï¼‰
+	3.å‘˜å·¥ç±»å‹è¾“å…¥é”™è¯¯ å¤„ç†é€»è¾‘
 	*/
 
-	short typ;	//1±íÊ¾ÕıÊ½Ô±¹¤£¬0±íÊ¾ÁÙÊ±Ô±¹¤
-	int opt = 0;	//ÈÃÓÃ»§È·ÈÏÊÇ·ñÉ¾³ı£¬Ä¬ÈÏ²»É¾³ı
-	string num;	//ÁÙÊ±´æ´¢ÊäÈë±àºÅ
-	bool found = false;	//±êÊ¶ÊÇ·ñÕÒµ½¶ÔÓ¦Ô±¹¤£¬Ä¬ÈÏÖµfalse
+	short typ;	//1è¡¨ç¤ºæ­£å¼å‘˜å·¥ï¼Œ0è¡¨ç¤ºä¸´æ—¶å‘˜å·¥
+	int opt = 0;	//è®©ç”¨æˆ·ç¡®è®¤æ˜¯å¦åˆ é™¤ï¼Œé»˜è®¤ä¸åˆ é™¤
+	string num;	//ä¸´æ—¶å­˜å‚¨è¾“å…¥ç¼–å·
+	bool found = false;	//æ ‡è¯†æ˜¯å¦æ‰¾åˆ°å¯¹åº”å‘˜å·¥ï¼Œé»˜è®¤å€¼false
 
-	cout << "========É¾³ıÔ±¹¤ĞÅÏ¢=======" << endl << endl;
+	cout << "========åˆ é™¤å‘˜å·¥ä¿¡æ¯=======" << endl << endl;
 
-	cout << "ÊäÈëÔ±¹¤ÀàĞÍ:";
+	cout << "è¾“å…¥å‘˜å·¥ç±»å‹:";
 	cin >> typ;
 
 	if (typ == 0)
 	{
-		cout << "ÊäÈëÔ±¹¤±àºÅ:";
+		cout << "è¾“å…¥å‘˜å·¥ç¼–å·:";
 		cin >> num;
 		for (vector<Tempstaff>::iterator it = tStaffList.begin(); it != tStaffList.end(); it++)
 		{
 			if (it->m_num == num)
 			{
 				found = true;
-				cout << "ÕÒµ½¶ÔÓ¦Ô±¹¤\n";
+				cout << "æ‰¾åˆ°å¯¹åº”å‘˜å·¥\n";
 				it->m_display();
-				cout << "\nÈ·ÈÏÉ¾³ıÔ±¹¤" << it->m_name << "?\n\n0.È¡Ïû\t1.È·ÈÏ\n";
+				cout << "\nç¡®è®¤åˆ é™¤å‘˜å·¥" << it->m_name << "?\n\n0.å–æ¶ˆ\t1.ç¡®è®¤\n";
 				cin >> opt;
 				if (opt)
 				{
 					tStaffList.erase(it);
-					cout << "ÒÑÉ¾³ı!" << endl;
+					cout << "å·²åˆ é™¤!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}
 				else
 				{
-					cout << "ÒÑÈ¡Ïû!" << endl;
+					cout << "å·²å–æ¶ˆ!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}
 				break;
@@ -48,36 +51,36 @@ void deleteStaff()
 		}
 		if (!found)
 		{
-			cout << "Î´ÕÒµ½¸ÃÔ±¹¤!" << endl;
+			cout << "æœªæ‰¾åˆ°è¯¥å‘˜å·¥!" << endl;
 			system("ping 127.1 -n 3 >nul");
 		}
 	}
 	else if (typ == 1)
 	{
-		cout << "ÊäÈëÔ±¹¤±àºÅ:";
+		cout << "è¾“å…¥å‘˜å·¥ç¼–å·:";
 		cin >> num;
 		for (vector<Officialstaff>::iterator it = oStaffList.begin(); it != oStaffList.end(); it++)
 		{
 			if (it->m_num == num)
 			{
 				found = true;
-				cout << "ÕÒµ½¶ÔÓ¦Ô±¹¤\n";
-				//TO DO: ºáÏò¡¢×İÏòÏÔÊ¾Ô±¹¤ĞÅÏ¢
+				cout << "æ‰¾åˆ°å¯¹åº”å‘˜å·¥\n";
+				//TO DO: æ¨ªå‘ã€çºµå‘æ˜¾ç¤ºå‘˜å·¥ä¿¡æ¯
 				{
 
 				}
 				it->m_display();
-				cout << "\nÈ·ÈÏÉ¾³ıÔ±¹¤" << it->m_name << "?\n\n0.È¡Ïû\t1.È·ÈÏ\n";
+				cout << "\nç¡®è®¤åˆ é™¤å‘˜å·¥" << it->m_name << "?\n\n0.å–æ¶ˆ\t1.ç¡®è®¤\n";
 				cin >> opt;
 				if (opt)
 				{
 					oStaffList.erase(it);
-					cout << "ÒÑÉ¾³ı!" << endl;
+					cout << "å·²åˆ é™¤!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}
 				else
 				{
-					cout << "ÒÑÈ¡Ïû!" << endl;
+					cout << "å·²å–æ¶ˆ!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}
 				break;
@@ -85,13 +88,13 @@ void deleteStaff()
 		}
 		if (!found)
 		{
-			cout << "Î´ÕÒµ½¸ÃÔ±¹¤!" << endl;
+			cout << "æœªæ‰¾åˆ°è¯¥å‘˜å·¥!" << endl;
 			system("ping 127.1 -n 3 >nul");
 		}
 	}
 	else
 	{
-		cout << "ÊäÈë´íÎó£¬¼´½«·µ»ØÖ÷²Ëµ¥!" << endl;
+		cout << "è¾“å…¥é”™è¯¯ï¼Œå³å°†è¿”å›ä¸»èœå•!" << endl;
 		system("ping 127.1 -n 3 >nul");
 	}
 }

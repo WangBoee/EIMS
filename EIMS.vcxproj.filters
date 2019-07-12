@@ -33,6 +33,24 @@
     <ClCompile Include="writeFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="checkInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="deleteStaff.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="editInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="newStaff.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="print.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="officialStaff.h">
@@ -45,12 +63,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Functions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="readFile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="writeFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

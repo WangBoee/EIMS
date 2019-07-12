@@ -123,9 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="checkInfo.cpp" />
+    <ClCompile Include="deleteStaff.cpp" />
+    <ClCompile Include="editInfo.cpp" />
     <ClCompile Include="EIMS.cpp" />
     <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="newStaff.cpp" />
     <ClCompile Include="officialStaff.cpp" />
+    <ClCompile Include="print.cpp" />
     <ClCompile Include="readFile.cpp" />
     <ClCompile Include="tempStaff.cpp" />
     <ClCompile Include="writeFile.cpp" />
@@ -135,8 +141,6 @@
     <ClInclude Include="officialStaff.h" />
     <ClInclude Include="Staff.h" />
     <ClInclude Include="tempStaff.h" />
-    <ClInclude Include="readFile.h" />
-    <ClInclude Include="writeFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
