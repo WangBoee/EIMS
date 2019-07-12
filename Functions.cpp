@@ -1,18 +1,17 @@
 ﻿#include "officialStaff.h"
 #include "Staff.h"
 #include "tempStaff.h"
-#include <iostream>
-#include <Windows.h>
 #include "Functions.h"
+#include <Windows.h>
 using namespace std;
 
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;	//正式员工列表
 
 //主菜单界面
-void meanu()
+void menu()
 {
-	/*	TO DO:void menu()
+	/*	TO DO:
 	0.添加修改员工信息选项（功能）
 	*/
 	cout << endl
@@ -56,7 +55,7 @@ void checkInfo()
 	//先在正式员工列表中查找
 	for (auto x : oStaffList)
 	{
-		if (x.m_num == num)
+		if (x.m_get_num() == num)
 		{
 			x.m_display(0);	//找到则输出员工信息
 			found = true;	//同时标识已找到对应员工
@@ -69,7 +68,7 @@ void checkInfo()
 		//在临时员工列表中查找
 		for (auto x : tStaffList)
 		{
-			if (x.m_num == num)
+			if (x.m_get_num() == num)
 			{
 				x.m_display();	//找到则输出员工信息
 				found = true;	//同时标识已找到对应员工
@@ -161,12 +160,12 @@ void deleteStaff()
 		cin >> num;
 		for (vector<Tempstaff>::iterator it = tStaffList.begin(); it != tStaffList.end(); it++)
 		{
-			if (it->m_num == num)
+			if (it->m_get_num() == num)
 			{
 				found = true;
 				cout << "找到对应员工\n";
-				it->m_display();
-				cout << "\n确认删除员工" << it->m_name << "?\n\n0.取消\t1.确认\n";
+				it->m_display(1);
+				cout << "\n确认删除员工" << it->m_get_name() << "?\n\n0.取消\t1.确认\n";
 				cin >> opt;
 				if (opt)
 				{
@@ -194,7 +193,7 @@ void deleteStaff()
 		cin >> num;
 		for (vector<Officialstaff>::iterator it = oStaffList.begin(); it != oStaffList.end(); it++)
 		{
-			if (it->m_num == num)
+			if (it->m_get_num() == num)
 			{
 				found = true;
 				cout << "找到对应员工\n";
@@ -203,7 +202,7 @@ void deleteStaff()
 
 				}
 				it->m_display();
-				cout << "\n确认删除员工" << it->m_name << "?\n\n0.取消\t1.确认\n";
+				cout << "\n确认删除员工" << it->m_get_name() << "?\n\n0.取消\t1.确认\n";
 				cin >> opt;
 				if (opt)
 				{
@@ -230,148 +229,6 @@ void deleteStaff()
 		cout << "输入错误，即将返回主菜单!" << endl;
 		system("ping 127.1 -n 3 >nul");
 	}
-}
-
-//从文件读取临时员工信息
-void readTSL()
-{
-	//文件tempStaffList.dat存储临时员工数据
-	ifstream tfp("tempStaffList.dat");
-	//定位文件位置指针于文件头部
-	tfp.seekg(ifstream::beg);
-	//fp.open("tempStaffList.dat", ios::in);	//文件tempStaffList.dat存储临时员工信息
-	//循环读取
-	while (true)
-	{
-		//临时变量，用于存储临时数据
-		string num;	//职工编号
-		string name;	//职工姓名
-		bool sex;	//员工性别
-		int age;	//职工年龄
-		float salary;	//员工基本职务工资 
-		string home;	//员工家庭住址
-		float bonus;	//奖金
-		float tax;	//所得税
-		float real;	//实发工资
-
-		//从文件读取数据存入临时变量
-		tfp >> num
-			>> name
-			>> sex
-			>> age
-			>> salary
-			>> home
-			>> bonus
-			>> tax
-			>> real;
-
-		//当读到文件尾时跳出循环
-		if (tfp.eof())
-			break;
-		//用tfp读取的数据初始化一个临时对象
-		Tempstaff tmp(num, name, sex, age, salary, home, bonus, tax, real);
-		//存入临时员工列表
-		tStaffList.push_back(tmp);
-	}
-	tfp.close();	//关闭打开的文件
-}
-
-//将所有临时员工信息存入文件
-void writeTSL()
-{
-	fstream tfp;
-	//以追加写入方式打开文件
-	tfp.open("tempStaffList.dat", ios::out | ios::trunc);
-	//写入临时员工数据，每个员工数据占一行
-	for (int i = 0; i < tStaffList.size(); i++)
-	{
-		tfp << tStaffList[i].m_num << " "
-			<< tStaffList[i].m_name << " "
-			<< tStaffList[i].m_sex << " "
-			<< tStaffList[i].m_age << " "
-			<< tStaffList[i].m_salary << " "
-			<< tStaffList[i].m_home << " "
-			<< tStaffList[i].m_bonus << " "
-			<< tStaffList[i].m_tax << " "
-			<< tStaffList[i].m_real_salary << endl;
-	}
-	tfp.close();	//关闭文件
-}
-
-//从文件读取正式员工信息
-void readOSL()
-{
-	//文件officialStaffList.dat存储所有正式员工信息
-	ifstream ofp("officialStaffList.dat");
-	//定位文件位置指针于文件头部
-	ofp.seekg(ifstream::beg);
-	//fp.open("tempStaffList.dat", ios::in);	//文件tempStaffList.dat存储正式员工信息
-	//循环读取数据
-	while (true)
-	{
-		//临时变量
-		string Num;	//职工编号
-		string Name;	//职工姓名
-		bool Sex;	//员工性别
-		int Age;	//职工年龄
-		float Salary;	//员工基本职务工资 
-		string Home;	//员工家庭住址
-		float Allowance;	//津贴
-		float Annuity;	//养老金
-		float HousingFund;	//住房公积金
-		float Tax;	//所得税
-		float MedicalInsurance;	//医疗保险
-		float realS;	//实发工资
-
-		//从文件读取数据存入临时变量
-		ofp >> Num
-			>> Name
-			>> Sex
-			>> Age
-			>> Salary
-			>> Home
-			>> Allowance
-			>> Annuity
-			>> HousingFund
-			>> Tax
-			>> MedicalInsurance
-			>> realS;
-
-		//读到文件尾跳出循环
-		if (ofp.eof())
-			break;
-		//用ofp读取的数据初始化一个临时对象
-		Officialstaff tmp(Num, Name, Sex, Age, Salary, Home, Allowance, Annuity
-			, HousingFund, Tax, MedicalInsurance, realS);
-		//存入正式员工列表
-		oStaffList.push_back(tmp);
-	}
-	ofp.close();	//关闭打开的文件
-}
-
-//将所有正式员工信息存入文件
-void writeOSL()
-{
-	fstream ofp;
-	//以追加写入方式打开文件
-	ofp.open("officialStaffList.dat", ios::out | ios::trunc);
-	//写入临时员工数据，每个员工数据占一行
-	for (int i = 0; i < oStaffList.size(); i++)
-	{
-		ofp << oStaffList[i].m_num << " "
-			<< oStaffList[i].m_name << " "
-			<< oStaffList[i].m_sex << " "
-			<< oStaffList[i].m_age << " "
-			<< oStaffList[i].m_salary << " "
-			<< oStaffList[i].m_home << " "
-			<< oStaffList[i].m_allowance << " "
-			<< oStaffList[i].m_annuity << " "
-			<< oStaffList[i].m_fund << " "
-			<< oStaffList[i].m_tax << " "
-			<< oStaffList[i].m_medical << " "
-			<< oStaffList[i].m_real_salary << endl;
-	}
-	ofp.close();	//关闭文件
 }
 
 void print(const string& str)
