@@ -3,71 +3,6 @@
 #include <fstream>
 #include <vector>
 
-//手动输入信息
-void Officialstaff::m_input()
-{
-	cout << "请输入正式员工的编号" << endl;
-	cin >> m_num;
-	cout << "请输入正式员工的姓名" << endl;
-	cin.get();
-	getline(cin, m_name);
-	cout << "请输入正式员工的性别(0.女  1.男)" << endl;
-	int sex;
-	cin >> sex;
-	m_sex = sex ? true : false;
-	cout << "请输入正式员工的年龄" << endl;
-	cin >> m_age;
-	cout << "请输入正式员工的基本职务工资" << endl;
-	cin >> m_salary;
-	cout << "请输入正式员工的家庭住址" << endl;
-	cin.get();
-	getline(cin, m_home);
-
-	cout << "请输入正式员工的津贴" << endl;
-	cin >> m_allowance;
-	cout << "请输入正式员工的养老金" << endl;
-	cin >> m_annuity;
-	cout << "请输入正式员工的住房公积金" << endl;
-	cin >> m_fund;
-	cout << "请输入正式员工的所得税" << endl;
-	cin >> m_tax;
-	cout << "请输入正式员工的医疗保险" << endl;
-	cin >> m_medical;
-	m_calculateSalary();
-}
-
-//显示信息
-void Officialstaff::m_display(int mode)
-{
-	//19.6.26 add
-	if (mode == 1)
-	{//29.7.10 add
-		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << m_sex << " "
-			<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
-			<< "津贴：" << m_allowance << " " << "养老金：" << m_annuity << " " << "住房公积金：" << m_fund << " "
-			<< "所得税：" << m_tax << " " << "医疗保险：" << m_medical << " " << "实发工资：" << m_real_salary << endl;
-	}
-	else if (mode == 0)
-	{
-		cout << "编号：" << m_num << endl
-			<< "姓名：" << m_name << endl
-			<< "性别：" << m_sex << endl
-			<< "年龄：" << m_age << endl
-			<< "工资：" << m_salary << endl
-			<< "家庭住址：" << m_home << endl
-			<< "津贴：" << m_allowance << endl
-			<< "养老金：" << m_annuity << endl
-			<< "住房公积金：" << m_fund << endl
-			<< "所得税：" << m_tax << endl
-			<< "医疗保险：" << m_medical << endl
-			<< "实发工资：" << m_real_salary << endl;
-	}
-	else
-	{
-		cout << "输入错误！" << endl;
-	}
-}
-
 //默认构造函数
 Officialstaff::Officialstaff()
 {
@@ -82,7 +17,8 @@ Officialstaff::Officialstaff()
 	m_fund = 0;
 	m_tax = 0;
 	m_medical = 0;
-	m_real_salary = 0;;
+	m_real_salary = 0;
+	cout << "成功创建正式员工对象" << endl;
 }
 
 //按顺序初始化参数，不包含实发工资
@@ -167,6 +103,71 @@ Officialstaff& Officialstaff::operator=(const Officialstaff& T)
 	m_medical = T.m_medical;
 	m_real_salary = T.m_real_salary;
 	return *this;
+}
+
+//手动输入信息
+void Officialstaff::m_input()
+{
+	cout << "请输入正式员工的编号" << endl;
+	cin >> m_num;
+	cout << "请输入正式员工的姓名" << endl;
+	cin.get();
+	getline(cin, m_name);
+	cout << "请输入正式员工的性别(0.女  1.男)" << endl;
+	int sex;
+	cin >> sex;
+	m_sex = sex ? true : false;
+	cout << "请输入正式员工的年龄" << endl;
+	cin >> m_age;
+	cout << "请输入正式员工的基本职务工资" << endl;
+	cin >> m_salary;
+	cout << "请输入正式员工的家庭住址" << endl;
+	cin.get();
+	getline(cin, m_home);
+
+	cout << "请输入正式员工的津贴" << endl;
+	cin >> m_allowance;
+	cout << "请输入正式员工的养老金" << endl;
+	cin >> m_annuity;
+	cout << "请输入正式员工的住房公积金" << endl;
+	cin >> m_fund;
+	cout << "请输入正式员工的所得税" << endl;
+	cin >> m_tax;
+	cout << "请输入正式员工的医疗保险" << endl;
+	cin >> m_medical;
+	m_calculateSalary();
+}
+
+//显示信息
+void Officialstaff::m_display(int mode)
+{
+	//19.6.26 add
+	if (mode == 1)
+	{//29.7.10 add
+		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << m_sex << " "
+			<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
+			<< "津贴：" << m_allowance << " " << "养老金：" << m_annuity << " " << "住房公积金：" << m_fund << " "
+			<< "所得税：" << m_tax << " " << "医疗保险：" << m_medical << " " << "实发工资：" << m_real_salary << endl;
+	}
+	else if (mode == 0)
+	{
+		cout << "编号：" << m_num << endl
+			<< "姓名：" << m_name << endl
+			<< "性别：" << m_sex << endl
+			<< "年龄：" << m_age << endl
+			<< "工资：" << m_salary << endl
+			<< "家庭住址：" << m_home << endl
+			<< "津贴：" << m_allowance << endl
+			<< "养老金：" << m_annuity << endl
+			<< "住房公积金：" << m_fund << endl
+			<< "所得税：" << m_tax << endl
+			<< "医疗保险：" << m_medical << endl
+			<< "实发工资：" << m_real_salary << endl;
+	}
+	else
+	{
+		cout << "输入错误！" << endl;
+	}
 }
 
 //计算员工实发工资

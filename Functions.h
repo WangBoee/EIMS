@@ -8,6 +8,9 @@
 
 using namespace std;
 
+extern vector<Tempstaff> tStaffList;
+extern vector<Officialstaff> oStaffList;
+
 void menu();
 //查看员工信息
 void checkInfo();
@@ -25,5 +28,10 @@ void writeOSL();
 void readTSL();
 //从文件读取正式员工信息
 void readOSL();
+
+void findStaff(string num);
+
+//列出所有员工信息
+void showAll();
 
 void print(const string& str);

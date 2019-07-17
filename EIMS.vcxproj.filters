@@ -24,9 +24,6 @@
     <ClCompile Include="tempStaff.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Functions.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="readFile.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -52,6 +49,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="compareStaff.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="findStaff.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="showAll.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

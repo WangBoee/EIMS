@@ -37,7 +37,7 @@ void deleteStaff()
 				cin >> opt;
 				if (opt)
 				{
-					tStaffList.erase(it);
+					tStaffList.erase(it);	//删除找到的对应元素
 					cout << "已删除!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}
@@ -74,7 +74,7 @@ void deleteStaff()
 				cin >> opt;
 				if (opt)
 				{
-					oStaffList.erase(it);
+					oStaffList.erase(it);	//删除找到的对应元素
 					cout << "已删除!" << endl;
 					system("ping 127.1 -n 3 >nul");
 				}

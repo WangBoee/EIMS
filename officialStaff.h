@@ -4,6 +4,7 @@
 class Officialstaff :
 	public Staff
 {
+public:
 	float m_allowance;	//津贴
 	float m_annuity;	//养老金
 	float m_fund;	//住房公积金
