@@ -1,7 +1,7 @@
 ﻿#include "compareStaff.h"
 
 //根据正式员工编号升序排序
-bool comp_num(Officialstaff& s0, Officialstaff& s1)
+bool comp_num_up(Officialstaff& s0, Officialstaff& s1)
 {
 	if (s0.m_get_num() < s1.m_get_num())
 		return true;
@@ -9,7 +9,7 @@ bool comp_num(Officialstaff& s0, Officialstaff& s1)
 }
 
 //重载，根据临时员工编号升序排序
-bool comp_num(Tempstaff& t0, Tempstaff& t1)
+bool comp_num_up(Tempstaff& t0, Tempstaff& t1)
 {
 	if (t0.m_get_num() < t1.m_get_num())
 		return true;
@@ -17,7 +17,7 @@ bool comp_num(Tempstaff& t0, Tempstaff& t1)
 }
 
 //根据正式员工实发工资升序排序，若相同，则按编号升序排序
-bool comp_salary(Officialstaff& s0, Officialstaff& s1)
+bool comp_salary_up(Officialstaff& s0, Officialstaff& s1)
 {
 	if (s0.m_get_salary() == s1.m_get_salary())
 		return(s0.m_get_num() < s1.m_get_num());
@@ -26,7 +26,7 @@ bool comp_salary(Officialstaff& s0, Officialstaff& s1)
 }
 
 //重载，根据临时员工实发工资升序排序
-bool comp_salary(Tempstaff& t0, Tempstaff& t1)
+bool comp_salary_up(Tempstaff& t0, Tempstaff& t1)
 {
 	if (t0.m_get_salary() == t1.m_get_salary())
 		return(t0.m_get_num() < t1.m_get_num());
