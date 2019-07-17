@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="checkInfo.cpp" />
+    <ClCompile Include="compareStaff.cpp" />
     <ClCompile Include="deleteStaff.cpp" />
     <ClCompile Include="editInfo.cpp" />
     <ClCompile Include="EIMS.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="writeFile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="compareStaff.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="officialStaff.h" />
     <ClInclude Include="Staff.h" />

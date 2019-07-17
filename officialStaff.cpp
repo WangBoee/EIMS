@@ -187,6 +187,11 @@ string Officialstaff::m_get_name()
 	return m_name;
 }
 
+float Officialstaff::m_get_salary()
+{
+	return m_real_salary;
+}
+
 //析构函数
 Officialstaff::~Officialstaff()
 {

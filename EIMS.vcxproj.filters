@@ -51,6 +51,9 @@
     <ClCompile Include="print.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="compareStaff.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="officialStaff.h">
@@ -63,6 +66,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Functions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="compareStaff.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

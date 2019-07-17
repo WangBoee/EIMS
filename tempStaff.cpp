@@ -34,9 +34,9 @@ void Tempstaff::m_display(int mode)
 	//19.6.26 add
 	if (mode == 1)
 	{//19.7.10 add
-		cout<< "编号：" << m_num << " "<< "姓名：" << m_name << " "<< "性别：" << m_sex << " "
-			<< "年龄：" << m_age << " "	<< "工资：" << m_salary << " "<< "家庭住址：" << m_home << " "
-			<< "奖金：" << m_bonus << " "<< "所得税：" << m_tax << " "<< "实发工资：" << m_real_salary << endl;
+		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << m_sex << " "
+			<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
+			<< "奖金：" << m_bonus << " " << "所得税：" << m_tax << " " << "实发工资：" << m_real_salary << endl;
 	}
 	else if (mode == 0)
 	{
@@ -52,7 +52,7 @@ void Tempstaff::m_display(int mode)
 	}
 	else
 	{
-		cout << "输入错误！"<<endl;
+		cout << "输入错误！" << endl;
 	}
 }
 
@@ -70,6 +70,11 @@ string Tempstaff::m_get_num()
 string Tempstaff::m_get_name()
 {
 	return m_name;
+}
+
+float Tempstaff::m_get_salary()
+{
+	return m_real_salary;
 }
 
 //void Tempstaff::operator=(const Tempstaff& tmp)

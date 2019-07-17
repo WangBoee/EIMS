@@ -4,7 +4,6 @@
 class Officialstaff :
 	public Staff
 {
-public:
 	float m_allowance;	//津贴
 	float m_annuity;	//养老金
 	float m_fund;	//住房公积金
@@ -25,6 +24,7 @@ public:
 
 	string m_get_num();		//获取员工编号
 	string m_get_name();	//获取员工姓名
+	float m_get_salary();		//获取员工实发工资
 
 	//析构函数
 	~Officialstaff();
