@@ -28,10 +28,13 @@ void writeOSL();
 void readTSL();
 //从文件读取正式员工信息
 void readOSL();
-
-void findStaff(string num);
-
+//输入检查
+void inputCheck(int& t);
 //列出所有员工信息
 void showAll();
+//查找正式员工
+void findOfficialStaff(string num);
+//查找临时员工
+void findTempStaff(string num);
 
 void print(const string& str);

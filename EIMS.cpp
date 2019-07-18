@@ -19,12 +19,7 @@
 124 e 1 23 35466 home4 325 355 35613
 */
 
-#include "officialStaff.h"
-#include "Staff.h"
-#include "tempStaff.h"
 #include "Functions.h"
-#include <iostream>
-#include <vector>
 
 using namespace std;
 

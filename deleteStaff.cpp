@@ -6,13 +6,10 @@ extern vector<Officialstaff> oStaffList;
 void deleteStaff()
 {
 	/*	TO DO:
-	0.补全注释
-	1.容错处理
-	2.根据多种方式查找（编号，姓名）
-	3.员工类型输入错误 处理逻辑
+	2.根据多种方式查找（编号，姓名
 	*/
 
-	short typ;	//1表示正式员工，0表示临时员工
+	int type;	//1表示正式员工，0表示临时员工
 	int opt = 0;	//让用户确认是否删除，默认不删除
 	string num;	//临时存储输入编号
 	bool found = false;	//标识是否找到对应员工，默认值false
@@ -20,9 +17,9 @@ void deleteStaff()
 	cout << "========删除员工信息=======" << endl << endl;
 
 	cout << "输入员工类型:";
-	cin >> typ;
-
-	if (typ == 0)
+	cin >> type;
+	inputCheck(type);
+	if (type == 0)
 	{
 		cout << "输入员工编号:";
 		cin >> num;
@@ -55,7 +52,7 @@ void deleteStaff()
 			system("ping 127.1 -n 3 >nul");
 		}
 	}
-	else if (typ == 1)
+	else if (type == 1)
 	{
 		cout << "输入员工编号:";
 		cin >> num;
@@ -91,10 +88,5 @@ void deleteStaff()
 			cout << "未找到该员工!" << endl;
 			system("ping 127.1 -n 3 >nul");
 		}
-	}
-	else
-	{
-		cout << "输入错误，即将返回主菜单!" << endl;
-		system("ping 127.1 -n 3 >nul");
 	}
 }

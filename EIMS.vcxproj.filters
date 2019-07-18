@@ -71,10 +71,10 @@
     <ClInclude Include="tempStaff.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Functions.h">
+    <ClInclude Include="compareStaff.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="compareStaff.h">
+    <ClInclude Include="Functions.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

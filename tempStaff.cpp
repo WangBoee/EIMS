@@ -131,7 +131,7 @@ void Tempstaff::m_display(int mode)
 	//19.6.26 add
 	if (mode == 1)
 	{//19.7.10 add
-		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << m_sex << " "
+		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << (m_sex ? "男" : "女") << " "
 			<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
 			<< "奖金：" << m_bonus << " " << "所得税：" << m_tax << " " << "实发工资：" << m_real_salary << endl;
 	}
@@ -139,7 +139,7 @@ void Tempstaff::m_display(int mode)
 	{
 		cout << "编号：" << m_num << endl
 			<< "姓名：" << m_name << endl
-			<< "性别：" << m_sex << endl
+			<< "性别：" << (m_sex ? "男" : "女") << endl
 			<< "年龄：" << m_age << endl
 			<< "工资：" << m_salary << endl
 			<< "家庭住址：" << m_home << endl
