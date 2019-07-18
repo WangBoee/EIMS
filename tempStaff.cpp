@@ -64,6 +64,7 @@ Tempstaff::Tempstaff(const Tempstaff& T)
 	m_num = T.m_num;
 	m_name = T.m_name;
 	m_sex = T.m_sex;
+	m_age = T.m_age;
 	m_salary = T.m_salary;
 	m_home = T.m_home;
 	m_bonus = T.m_bonus;
@@ -77,6 +78,7 @@ Tempstaff& Tempstaff::operator=(const Tempstaff& T)
 	m_num = T.m_num;
 	m_name = T.m_name;
 	m_sex = T.m_sex;
+	m_age = T.m_age;
 	m_salary = T.m_salary;
 	m_home = T.m_home;
 	m_bonus = T.m_bonus;
@@ -129,7 +131,7 @@ void Tempstaff::m_input()
 void Tempstaff::m_display(int mode)
 {
 	//19.6.26 add
-	if (mode == 1)
+ 	if (mode == 1)
 	{//19.7.10 add
 		cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << (m_sex ? "男" : "女") << " "
 			<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
