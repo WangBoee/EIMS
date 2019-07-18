@@ -133,9 +133,9 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="newStaff.cpp" />
     <ClCompile Include="officialStaff.cpp" />
-    <ClCompile Include="print.cpp" />
     <ClCompile Include="readFile.cpp" />
     <ClCompile Include="showAll.cpp" />
+    <ClCompile Include="Staff.cpp" />
     <ClCompile Include="tempStaff.cpp" />
     <ClCompile Include="writeFile.cpp" />
   </ItemGroup>

@@ -54,6 +54,9 @@ int main(void)
 			system("cls");
 			deleteStaff();	//删除员工信息菜单
 			break;
+		case 4:
+			;	//修改员工信息
+			break;
 		default:
 			break;
 		}

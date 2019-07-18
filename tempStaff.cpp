@@ -1,7 +1,7 @@
 ﻿#include "tempStaff.h"
 #include <iostream>
 
-
+using WANGBOYI::Tempstaff;
 
 //void Tempstaff::operator=(const Tempstaff& tmp)
 //{
@@ -64,6 +64,7 @@ Tempstaff::Tempstaff(const Tempstaff& T)
 	m_num = T.m_num;
 	m_name = T.m_name;
 	m_sex = T.m_sex;
+	m_age = T.m_age;
 	m_salary = T.m_salary;
 	m_home = T.m_home;
 	m_bonus = T.m_bonus;
@@ -77,6 +78,7 @@ Tempstaff& Tempstaff::operator=(const Tempstaff& T)
 	m_num = T.m_num;
 	m_name = T.m_name;
 	m_sex = T.m_sex;
+	m_age = T.m_age;
 	m_salary = T.m_salary;
 	m_home = T.m_home;
 	m_bonus = T.m_bonus;
@@ -157,24 +159,6 @@ void Tempstaff::m_display(int mode)
 void Tempstaff::m_calculateSalary()
 {
 	m_real_salary = m_salary + m_bonus - m_tax;
-}
-
-//获取员工编号
-string Tempstaff::m_get_num()
-{
-	return m_num;
-}
-
-//获取员工姓名
-string Tempstaff::m_get_name()
-{
-	return m_name;
-}
-
-//获取员工实发工资
-float Tempstaff::m_get_salary()
-{
-	return m_real_salary;
 }
 
 //析构函数

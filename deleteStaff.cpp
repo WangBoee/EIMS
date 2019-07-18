@@ -25,12 +25,12 @@ void deleteStaff()
 		cin >> num;
 		for (vector<Tempstaff>::iterator it = tStaffList.begin(); it != tStaffList.end(); it++)
 		{
-			if (it->m_num == num)
+			if (it->m_get_num() == num)
 			{
 				found = true;
 				cout << "找到对应员工\n";
 				it->m_display();
-				cout << "\n确认删除员工" << it->m_name << "?\n\n0.取消\t1.确认\n";
+				cout << "\n确认删除员工" << it->m_get_name() << "?\n\n0.取消\t1.确认\n";
 				cin >> opt;
 				if (opt)
 				{
@@ -58,7 +58,7 @@ void deleteStaff()
 		cin >> num;
 		for (vector<Officialstaff>::iterator it = oStaffList.begin(); it != oStaffList.end(); it++)
 		{
-			if (it->m_num == num)
+			if (it->m_get_num() == num)
 			{
 				found = true;
 				cout << "找到对应员工\n";
@@ -67,7 +67,7 @@ void deleteStaff()
 
 				}
 				it->m_display();
-				cout << "\n确认删除员工" << it->m_name << "?\n\n0.取消\t1.确认\n";
+				cout << "\n确认删除员工" << it->m_get_name() << "?\n\n0.取消\t1.确认\n";
 				cin >> opt;
 				if (opt)
 				{

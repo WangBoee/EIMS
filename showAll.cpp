@@ -39,4 +39,5 @@ void showAll()
 			it->m_display(1);
 		}
 	}
+	system("pause");
 }

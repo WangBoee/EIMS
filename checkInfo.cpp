@@ -1,6 +1,4 @@
 ﻿#include "Functions.h"
-//修正编码
-
 
 void checkInfo()
 {
@@ -32,5 +30,4 @@ void checkInfo()
 		showAll();
 		break;
 	}
-	system("pause");
 }
