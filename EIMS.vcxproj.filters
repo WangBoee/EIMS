@@ -45,9 +45,6 @@
     <ClCompile Include="newStaff.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="print.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="compareStaff.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="showAll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Staff.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

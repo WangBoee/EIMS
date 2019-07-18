@@ -12,15 +12,15 @@ void writeTSL()
 	//写入临时员工数据，每个员工数据占一行
 	for (int i = 0; i < tStaffList.size(); i++)
 	{
-		tfp << tStaffList[i].m_num << " "
-			<< tStaffList[i].m_name << " "
-			<< tStaffList[i].m_sex << " "
-			<< tStaffList[i].m_age << " "
-			<< tStaffList[i].m_salary << " "
-			<< tStaffList[i].m_home << " "
-			<< tStaffList[i].m_bonus << " "
-			<< tStaffList[i].m_tax << " "
-			<< tStaffList[i].m_real_salary << endl;
+		tfp << tStaffList[i].m_get_num() << " "
+			<< tStaffList[i].m_get_name() << " "
+			<< tStaffList[i].m_get_sex() << " "
+			<< tStaffList[i].m_get_age() << " "
+			<< tStaffList[i].m_get_salary() << " "
+			<< tStaffList[i].m_get_home() << " "
+			<< tStaffList[i].m_get_bonus() << " "
+			<< tStaffList[i].m_get_tax() << " "
+			<< tStaffList[i].m_get_real_salary() << endl;
 	}
 	tfp.close();	//关闭文件
 }
@@ -34,18 +34,18 @@ void writeOSL()
 	//写入临时员工数据，每个员工数据占一行
 	for (int i = 0; i < oStaffList.size(); i++)
 	{
-		ofp << oStaffList[i].m_num << " "
-			<< oStaffList[i].m_name << " "
-			<< oStaffList[i].m_sex << " "
-			<< oStaffList[i].m_age << " "
-			<< oStaffList[i].m_salary << " "
-			<< oStaffList[i].m_home << " "
-			<< oStaffList[i].m_allowance << " "
-			<< oStaffList[i].m_annuity << " "
-			<< oStaffList[i].m_fund << " "
-			<< oStaffList[i].m_tax << " "
-			<< oStaffList[i].m_medical << " "
-			<< oStaffList[i].m_real_salary << endl;
+		ofp << oStaffList[i].m_get_num() << " "
+			<< oStaffList[i].m_get_name() << " "
+			<< oStaffList[i].m_get_sex() << " "
+			<< oStaffList[i].m_get_age() << " "
+			<< oStaffList[i].m_get_salary() << " "
+			<< oStaffList[i].m_get_home() << " "
+			<< oStaffList[i].m_get_allowance() << " "
+			<< oStaffList[i].m_get_annuity() << " "
+			<< oStaffList[i].m_get_fund() << " "
+			<< oStaffList[i].m_get_tax() << " "
+			<< oStaffList[i].m_get_medical() << " "
+			<< oStaffList[i].m_get_real_salary() << endl;
 	}
 	ofp.close();	//关闭文件
 }

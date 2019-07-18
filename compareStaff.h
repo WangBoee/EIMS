@@ -3,6 +3,8 @@
 #include "officialStaff.h"
 #include "tempStaff.h"
 
+using namespace WANGBOYI;
+
 extern vector<Officialstaff> oStaffList;
 extern vector<Tempstaff> tStaffList;
 

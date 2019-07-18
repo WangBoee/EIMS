@@ -7,6 +7,7 @@
 #include "officialStaff.h"
 
 using namespace std;
+using namespace WANGBOYI;
 
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
@@ -37,4 +38,4 @@ void findOfficialStaff(string num);
 //查找临时员工
 void findTempStaff(string num);
 
-void print(const string& str);
+inline void print(const string& str);

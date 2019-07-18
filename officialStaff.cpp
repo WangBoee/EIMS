@@ -3,6 +3,8 @@
 #include <fstream>
 #include <vector>
 
+using WANGBOYI::Officialstaff;
+
 //默认构造函数
 Officialstaff::Officialstaff()
 {
@@ -176,24 +178,8 @@ void Officialstaff::m_calculateSalary()
 	m_real_salary = m_allowance + m_salary - m_annuity - m_fund - m_tax - m_medical;
 }
 
-//获取员工编号
-string Officialstaff::m_get_num()
-{
-	return m_num;
-}
-
-//获取员工姓名
-string Officialstaff::m_get_name()
-{
-	return m_name;
-}
-
-float Officialstaff::m_get_salary()
-{
-	return m_real_salary;
-}
-
 //析构函数
 Officialstaff::~Officialstaff()
 {
+	;
 }
