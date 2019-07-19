@@ -123,18 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="checkInfo.cpp" />
     <ClCompile Include="compareStaff.cpp" />
-    <ClCompile Include="deleteStaff.cpp" />
-    <ClCompile Include="editInfo.cpp" />
     <ClCompile Include="EIMS.cpp" />
-    <ClCompile Include="findStaff.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="menu.cpp" />
-    <ClCompile Include="newStaff.cpp" />
     <ClCompile Include="officialStaff.cpp" />
     <ClCompile Include="readFile.cpp" />
-    <ClCompile Include="showAll.cpp" />
     <ClCompile Include="Staff.cpp" />
     <ClCompile Include="tempStaff.cpp" />
     <ClCompile Include="writeFile.cpp" />
@@ -142,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="compareStaff.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="officialStaff.h" />
     <ClInclude Include="Staff.h" />
     <ClInclude Include="tempStaff.h" />

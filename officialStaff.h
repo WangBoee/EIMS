@@ -18,6 +18,7 @@ namespace WANGBOYI {
 		Officialstaff(const Officialstaff& T);	//拷贝构造函数
 		//Officialstaff(const Officialstaff&& T);	//移动构造函数
 		Officialstaff& operator=(const Officialstaff& T);	//重载 = 运算符
+		friend ostream& operator<<(ostream& os, Officialstaff& T);	//重载<<输出运算符
 
 		void m_input();	//手动输入数据
 		void m_display(int mode = 0);	//显示信息，0表示纵向(默认)，1表示横向

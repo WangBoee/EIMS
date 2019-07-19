@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Staff.h"
-#include <vector>
 
+//命名空间王伯益
 namespace WANGBOYI {
 	class Tempstaff :
 		public Staff
