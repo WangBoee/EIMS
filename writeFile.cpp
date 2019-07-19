@@ -14,11 +14,9 @@ namespace YUFEI
 	void writeTSL()
 	{
 		fstream tfp;
-		//以追加写入方式打开文件
-		tfp.open("tempStaffList.dat", ios::out | ios::trunc);
-		//写入临时员工数据，每个员工数据占一行
+		tfp.open("tempStaffList.dat", ios::out | ios::trunc);	//以覆盖写入方式打开文件
 		for (int i = 0; i < tStaffList.size(); i++)
-		{
+		{	//写入临时员工数据，每个员工数据占一行
 			tfp << tStaffList[i].m_get_num() << " " << tStaffList[i].m_get_name() << " "
 				<< tStaffList[i].m_get_sex() << " " << tStaffList[i].m_get_age() << " "
 				<< tStaffList[i].m_get_salary() << " " << tStaffList[i].m_get_home() << " "
@@ -32,11 +30,9 @@ namespace YUFEI
 	void writeOSL()
 	{
 		fstream ofp;
-		//以追加写入方式打开文件
-		ofp.open("officialStaffList.dat", ios::out | ios::trunc);
-		//写入临时员工数据，每个员工数据占一行
+		ofp.open("officialStaffList.dat", ios::out | ios::trunc);	//以覆盖写入方式打开文件
 		for (int i = 0; i < oStaffList.size(); i++)
-		{
+		{	//写入临时员工数据，每个员工数据占一行
 			ofp << oStaffList[i].m_get_num() << " " << oStaffList[i].m_get_name() << " "
 				<< oStaffList[i].m_get_sex() << " " << oStaffList[i].m_get_age() << " "
 				<< oStaffList[i].m_get_salary() << " " << oStaffList[i].m_get_home() << " "

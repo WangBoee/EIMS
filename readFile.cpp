@@ -3,7 +3,8 @@
 #include "officialStaff.h"
 #include "tempStaff.h"
 
-using namespace WANGBOYI;
+using WANGBOYI::Officialstaff;
+using WANGBOYI::Tempstaff;
 
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
@@ -12,16 +13,11 @@ extern vector<Officialstaff> oStaffList;
 namespace YUFEI {
 	//从文件读取临时员工信息
 	void readTSL()
-	{
-		//文件tempStaffList.dat存储临时员工数据
+	{//文件tempStaffList.dat存储临时员工数据
 		ifstream tfp("tempStaffList.dat");
-		//定位文件位置指针于文件头部
-		tfp.seekg(ifstream::beg);
-		//fp.open("tempStaffList.dat", ios::in);	//文件tempStaffList.dat存储临时员工信息
-		//循环读取
+		tfp.seekg(ifstream::beg);	//定位文件位置指针于文件头部
 		while (true)
-		{
-			//临时变量，用于存储临时数据
+		{//临时变量，用于存储临时数据
 			string num;	//职工编号
 			string name;	//职工姓名
 			bool sex;	//员工性别
@@ -33,8 +29,7 @@ namespace YUFEI {
 			float real;	//实发工资
 
 			//从文件读取数据存入临时变量
-			tfp >> num >> name >> sex >> age
-				>> salary >> home >> bonus >> tax >> real;
+			tfp >> num >> name >> sex >> age >> salary >> home >> bonus >> tax >> real;
 			//当读到文件尾时跳出循环
 			if (tfp.eof())
 				break;
@@ -45,19 +40,13 @@ namespace YUFEI {
 		}
 		tfp.close();	//关闭打开的文件
 	}
-
 	//从文件读取正式员工信息
 	void readOSL()
-	{
-		//文件officialStaffList.dat存储所有正式员工信息
+	{//文件officialStaffList.dat存储所有正式员工信息
 		ifstream ofp("officialStaffList.dat");
-		//定位文件位置指针于文件头部
-		ofp.seekg(ifstream::beg);
-		//fp.open("tempStaffList.dat", ios::in);	//文件tempStaffList.dat存储正式员工信息
-		//循环读取数据
+		ofp.seekg(ifstream::beg);	//定位文件位置指针于文件头部
 		while (true)
-		{
-			//临时变量
+		{//临时变量
 			string Num;	//职工编号
 			string Name;	//职工姓名
 			bool Sex;	//员工性别
@@ -78,10 +67,8 @@ namespace YUFEI {
 			if (ofp.eof())
 				break;
 			//用ofp读取的数据初始化一个临时对象
-			Officialstaff tmp(Num, Name, Sex, Age, Salary, Home, Allowance, Annuity
-				, HousingFund, Tax, MedicalInsurance, realS);
-			//存入正式员工列表
-			oStaffList.push_back(tmp);
+			Officialstaff tmp(Num, Name, Sex, Age, Salary, Home, Allowance, Annuity, HousingFund, Tax, MedicalInsurance, realS);
+			oStaffList.push_back(tmp);	//存入正式员工列表
 		}
 		ofp.close();	//关闭打开的文件
 	}

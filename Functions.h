@@ -7,7 +7,8 @@
 #include "officialStaff.h"
 
 using namespace std;
-using namespace WANGBOYI;
+using WANGBOYI::Officialstaff;
+using WANGBOYI::Tempstaff;
 
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
@@ -34,4 +35,6 @@ namespace WANGBOYI {
 	bool findTempStaff(string& num, int* ret);
 	//依次输出字符串所有字符
 	void print(const string& str);
+	//重载Officialstaff类的<<输出运算符
+	ostream& WANGBOYI::operator<<(ostream& os, Officialstaff& T);
 }

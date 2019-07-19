@@ -1,5 +1,9 @@
 ﻿#include "menu.h"
 #include "Functions.h"
+#include "compareStaff.h"
+
+using namespace WANGBOYI;
+using namespace XIANGQIAOSHUN;
 
 //主菜单
 void mainMenu()
@@ -10,7 +14,7 @@ void mainMenu()
 		<< "\t3.删除员工信息" << endl
 		<< "\t4.修改员工信息" << endl
 		<< "\t5.统计所有信息" << endl
-		<< "\t      0.退出" << endl
+		<< "\t   0.退出" << endl
 		<< "输入选项：";
 }
 
@@ -28,11 +32,11 @@ void searchMenu()
 	switch (type)
 	{
 	case 0:
-		if (!findOfficialStaff(num, NULL))
+		if (!findTempStaff(num, NULL))
 			cout << "未找到!\n";	//正式员工查找
 		break;
 	case 1:
-		if (!findTempStaff(num, NULL))
+		if (!findOfficialStaff(num, NULL))
 			cout << "未找到!\n";	//临时员工查找
 		break;
 	}
@@ -95,12 +99,10 @@ void deleteStaffMenu()
 {
 	int type;	//1表示正式员工，0表示临时员工
 	int opt = 0;	//让用户确认是否删除，默认不删除
-	int i = 0;	//i标记查找到的员工位置
+	int i = -1;	//i标记查找到的员工位置
 	string num;	//临时存储输入编号
-
 	cout << "========删除员工信息=======" << endl << endl
 		<< "0.临时员工\t1.正式员工" << endl;
-
 	cout << "输入员工类型:";
 	cin >> type;
 	inputCheck(type);	//输入检查
