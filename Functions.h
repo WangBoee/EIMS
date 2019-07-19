@@ -12,30 +12,26 @@ using namespace WANGBOYI;
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
 
-void menu();
-//查看员工信息
-void checkInfo();
-//修改员工信息
-void editInfo();
-//添加新员工
-void newStaff();
-//删除员工 
-void deleteStaff();
-//将所有临时员工信息存入文件
-void writeTSL();
-//将所有正式员工信息存入文件
-void writeOSL();
-//从文件读取临时员工信息
-void readTSL();
-//从文件读取正式员工信息
-void readOSL();
-//输入检查
-void inputCheck(int& t);
-//列出所有员工信息
-void showAll();
-//查找正式员工
-void findOfficialStaff(string num);
-//查找临时员工
-void findTempStaff(string num);
+//命名空间俞非
+namespace YUFEI
+{
+	//将所有临时员工信息存入文件
+	void writeTSL();
+	//将所有正式员工信息存入文件
+	void writeOSL();
+	//从文件读取临时员工信息
+	void readTSL();
+	//从文件读取正式员工信息
+	void readOSL();
+};
 
-inline void print(const string& str);
+namespace WANGBOYI {
+	//输入检查
+	void inputCheck(int& t);
+	//查找正式员工
+	bool findOfficialStaff(string& num, int* ret);
+	//查找临时员工
+	bool findTempStaff(string& num, int* ret);
+	//依次输出字符串所有字符
+	void print(const string& str);
+}

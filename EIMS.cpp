@@ -20,8 +20,10 @@
 */
 
 #include "Functions.h"
+#include "menu.h"
 
 using namespace std;
+using namespace YUFEI;
 
 vector<Tempstaff> tStaffList;	//临时员工列表
 vector<Officialstaff> oStaffList;	//正式员工列表
@@ -38,25 +40,27 @@ int main(void)
 	{
 		system("cls");	//清屏
 		print("========员工工资管理系统=======");
-		menu();	//显示主菜单
+		mainMenu();	//显示主菜单
 		cin >> opt;
 		switch (opt)
 		{
 		case 1:
 			system("cls");
-			checkInfo();	//查询员工信息菜单
+			searchMenu();	//查询员工信息菜单
 			break;
 		case 2:
 			system("cls");
-			newStaff();	//录入新的员工菜单
+			newStaffMenu();	//录入新的员工菜单
 			break;
 		case 3:
 			system("cls");
-			deleteStaff();	//删除员工信息菜单
+			deleteStaffMenu();	//删除员工信息菜单
 			break;
 		case 4:
 			;	//修改员工信息
 			break;
+		case 5:
+			checkAllMenu();
 		default:
 			break;
 		}

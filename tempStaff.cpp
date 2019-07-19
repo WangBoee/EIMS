@@ -103,8 +103,6 @@ Tempstaff& Tempstaff::operator=(const Tempstaff& T)
 //手动输入信息
 void Tempstaff::m_input()
 {
-	cout << "请输入临时员工的编号" << endl;
-	cin >> m_num;
 	cout << "请输入临时员工的姓名" << endl;
 	cin.get();
 	getline(cin, m_name);

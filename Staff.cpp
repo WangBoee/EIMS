@@ -1,5 +1,7 @@
 ﻿#include "Staff.h"
 
+using namespace WANGBOYI;
+
 Staff::Staff()
 {
 	m_num = "-1";
@@ -8,8 +10,4 @@ Staff::Staff()
 	m_age = 0;
 	m_salary = 0;
 	m_home = "none";
-}
-
-Staff::~Staff()
-{
 }
