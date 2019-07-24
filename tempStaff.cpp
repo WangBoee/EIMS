@@ -116,7 +116,6 @@ namespace WANGBOYI {
 		cout << "请输入临时员工的家庭住址" << endl;
 		cin.get();
 		getline(cin, m_home);
-
 		cout << "请输入临时员工的奖金" << endl;
 		cin >> m_bonus;
 		cout << "请输入临时员工的所得税" << endl;

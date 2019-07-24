@@ -63,32 +63,17 @@ void newStaffMenu()
 			if (findTempStaff(num, NULL))
 			{	//检查是否已存在对应员工
 				cout << "员工已存在!\n";
-				continue;
 			}
-			Tempstaff* ts = new Tempstaff;	//临时员工的临时对象
-			ts->m_set_num(num);	//设置员工编号
-			ts->m_input();	//输入临时员工信息
-			ts->m_display(0);
-			system("pause");
-			tStaffList.push_back(*ts);	//将此临时对象插入列表
-			delete ts;
-			break;
+			newTempStaff(num);
 		}
 		else if (type == 1)
 		{
 			if (findOfficialStaff(num, NULL))
-			{
+			{	//检查是否已存在对应员工
 				cout << "员工已存在!\n";
 				continue;
 			}
-			Officialstaff* ost = new Officialstaff;	//正式员工的临时对象
-			ost->m_set_num(num);	//设置员工编号
-			ost->m_input();	//输入正式员工信息
-			ost->m_display(0);
-			system("pause");
-			oStaffList.push_back(*ost);	//将此临时对象插入列表
-			delete ost;
-			break;
+			newOfficialStaff(num);
 		}
 	}
 	system("pause");	//暂停，显示信息等待用户按键确认
@@ -98,7 +83,6 @@ void newStaffMenu()
 void deleteStaffMenu()
 {
 	int type;	//1表示正式员工，0表示临时员工
-	int opt = 0;	//让用户确认是否删除，默认不删除
 	int i = -1;	//i标记查找到的员工位置
 	string num;	//临时存储输入编号
 	cout << "========删除员工信息=======" << endl << endl
@@ -112,20 +96,7 @@ void deleteStaffMenu()
 		cin >> num;
 		if (findTempStaff(num, &i))	//函数查找临时员工
 		{	//若找到对应员工，再次确认是否删除
-			cout << "\n确认删除员工" << (tStaffList.begin() + i)->m_get_name() << "?\n\n0.取消\t1.确认\n";
-			cin >> opt;
-			inputCheck(opt);
-			if (opt == 1)
-			{	//确认删除
-				tStaffList.erase(tStaffList.begin() + i);
-				cout << "已删除!" << endl;
-				system("ping 127.1 -n 2 >nul");	//暂停显示2秒
-			}
-			else if (opt == 0)
-			{	//取消删除
-				cout << "已取消!" << endl;
-				system("ping 127.1 -n  >nul");	//暂停显示2秒
-			}
+			conformDelTemp(i);
 		}
 		else
 		{	//未找到相应员工
@@ -139,21 +110,7 @@ void deleteStaffMenu()
 		cin >> num;
 		if (findOfficialStaff(num, &i))	//函数查找正式员工
 		{	//找到对应员工，再次确认是否删除
-			cout << "\n确认删除员工" << (oStaffList.begin() + i)->m_get_name()
-				<< "?\n\n0.取消\t1.确认\n";	//显示员工姓名
-			cin >> opt;
-			inputCheck(opt);
-			if (opt == 1)
-			{	//根据i的值确定需要删除的员工位置
-				oStaffList.erase(oStaffList.begin() + i);
-				cout << "已删除!" << endl;
-				system("ping 127.1 -n 2 >nul");	//暂停显示2秒
-			}
-			else if (opt == 0)
-			{
-				cout << "已取消!" << endl;
-				system("ping 127.1 -n 2 >nul");	//暂停显示2秒
-			}
+			conformDelOfficial(i);
 		}
 		else
 		{	//未找到相应员工
@@ -169,7 +126,7 @@ void editMenu() {
 	;
 }
 
-//列出所有员工信息
+//所有信息菜单
 void checkAllMenu()
 {
 	int type(-1);

@@ -33,6 +33,14 @@ namespace WANGBOYI {
 	bool findOfficialStaff(string& num, int* ret);
 	//查找临时员工
 	bool findTempStaff(string& num, int* ret);
+	//添加新临时员工
+	void newTempStaff(string& num);
+	//添加新正式员工
+	void newOfficialStaff(string& num);
+	//确认删除临时员工
+	void conformDelTemp(int& i);
+	//确认删除正式员工
+	void conformDelOfficial(int& i);
 	//依次输出字符串所有字符
 	void print(const string& str);
 	//重载Officialstaff类的<<输出运算符
