@@ -1,20 +1,7 @@
 ﻿#include "tempStaff.h"
 #include <iostream>
 
-//void Tempstaff::operator=(const Tempstaff& tmp)
-//{
-//	m_num = tmp.m_num;
-//	m_name = tmp.m_name;
-//	m_sex = tmp.m_sex;
-//	m_age = tmp.m_age;
-//	m_salary = tmp.m_salary;
-//	m_home = tmp.m_home;
-//	m_bonus = tmp.m_bonus;
-//	m_tax = tmp.m_tax;
-//	m_real_salary = tmp.m_real_salary;
-//}
-
-namespace WANGBOYI {
+namespace YUFEI {
 	Tempstaff::Tempstaff()
 	{
 		m_num = "-1";
@@ -86,18 +73,20 @@ namespace WANGBOYI {
 		return *this;
 	}
 
-	//移动构造函数
-	//Tempstaff::Tempstaff(Tempstaff&& T)
-	//{
-	//	m_num = T.m_num;
-	//	m_name = T.m_name;
-	//	m_sex = T.m_sex;
-	//	m_salary = T.m_salary;
-	//	m_home = T.m_home;
-	//	m_bonus = T.m_bonus;
-	//	m_tax = T.m_tax;
-	//	m_real_salary = T.m_real_salary;
-	//}
+	//重载Tempstaff类的<<输出运算符
+	ostream& operator<<(ostream& os, Tempstaff& T)
+	{
+		os << "编号：" << T.m_get_num() << endl
+			<< "姓名：" << T.m_get_name() << endl
+			<< "性别：" << (T.m_get_sex() ? "男" : "女") << endl
+			<< "年龄：" << T.m_get_age() << endl
+			<< "工资：" << T.m_get_salary() << endl
+			<< "家庭住址：" << T.m_get_home() << endl
+			<< "奖金：" << T.m_get_bonus() << endl
+			<< "所得税：" << T.m_get_tax() << endl
+			<< "实发工资：" << T.m_get_real_salary() << endl << endl;
+		return os;
+	}
 
 	//手动输入信息
 	void Tempstaff::m_input()

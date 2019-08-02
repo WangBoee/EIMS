@@ -12,6 +12,7 @@
 using namespace std;
 using namespace YUFEI;
 using namespace WANGBOYI;
+using namespace XIANGQIAOSHUN;
 
 vector<Tempstaff> tStaffList;	//临时员工列表
 vector<Officialstaff> oStaffList;	//正式员工列表

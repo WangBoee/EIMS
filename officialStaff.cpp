@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 
-namespace WANGBOYI {
+namespace XIANGQIAOSHUN {
 	//默认构造函数
 	Officialstaff::Officialstaff()
 	{
@@ -73,21 +73,6 @@ namespace WANGBOYI {
 		m_real_salary = T.m_real_salary;
 	}
 
-	//移动构造函数
-	//Officialstaff::Officialstaff(const Officialstaff&& T)
-	//{
-	//	m_num = T.m_num;
-	//	m_name = T.m_name;
-	//	m_sex = T.m_sex;
-	//	m_age = T.m_age;
-	//	m_salary = T.m_salary;
-	//	m_home = T.m_home;
-	//	m_allowance = T.m_allowance;
-	//	m_annuity = T.m_annuity;
-	//	m_fund = T.m_fund;
-	//	m_tax = T.m_tax;
-	//}
-
 	//重载 = 运算符
 	Officialstaff& Officialstaff::operator=(const Officialstaff& T)
 	{
@@ -104,6 +89,24 @@ namespace WANGBOYI {
 		m_medical = T.m_medical;
 		m_real_salary = T.m_real_salary;
 		return *this;
+	}
+
+	//重载Officialstaff类的<<输出运算符
+	ostream& operator<<(ostream& os, Officialstaff& T)
+	{
+		os << "编号：" << T.m_get_num() << endl
+			<< "姓名：" << T.m_get_name() << endl
+			<< "性别：" << (T.m_get_sex() ? "男" : "女") << endl
+			<< "年龄：" << T.m_get_age() << endl
+			<< "工资：" << T.m_get_salary() << endl
+			<< "家庭住址：" << T.m_get_home() << endl
+			<< "津贴：" << T.m_get_allowance() << endl
+			<< "养老金：" << T.m_get_annuity() << endl
+			<< "住房公积金：" << T.m_get_fund() << endl
+			<< "所得税：" << T.m_get_tax() << endl
+			<< "医疗保险：" << T.m_get_medical() << endl
+			<< "实发工资：" << T.m_get_real_salary() << endl << endl;
+		return os;
 	}
 
 	//手动输入信息

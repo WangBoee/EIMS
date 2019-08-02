@@ -7,8 +7,8 @@
 #include "officialStaff.h"
 
 using namespace std;
-using WANGBOYI::Officialstaff;
-using WANGBOYI::Tempstaff;
+using XIANGQIAOSHUN::Officialstaff;
+using YUFEI::Tempstaff;
 
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
@@ -30,9 +30,9 @@ namespace WANGBOYI {
 	//输入检查
 	void inputCheck(int& t);
 	//查找正式员工
-	bool findOfficialStaff(string& num, int* ret);
+	bool findOfficialStaff(string& num, int* ret = NULL);
 	//查找临时员工
-	bool findTempStaff(string& num, int* ret);
+	bool findTempStaff(string& num, int* ret = NULL);
 	//添加新临时员工
 	void newTempStaff(string& num);
 	//添加新正式员工
@@ -43,6 +43,4 @@ namespace WANGBOYI {
 	void conformDelOfficial(int& i);
 	//依次输出字符串所有字符
 	void print(const string& str);
-	//重载Officialstaff类的<<输出运算符
-	ostream& WANGBOYI::operator<<(ostream& os, Officialstaff& T);
 }

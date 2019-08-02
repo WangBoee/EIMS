@@ -3,8 +3,8 @@
 #include "officialStaff.h"
 #include "tempStaff.h"
 
-using WANGBOYI::Officialstaff;
-using WANGBOYI::Tempstaff;
+using XIANGQIAOSHUN::Officialstaff;
+using YUFEI::Tempstaff;
 
 extern vector<Officialstaff> oStaffList;
 extern vector<Tempstaff> tStaffList;

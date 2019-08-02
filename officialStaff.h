@@ -1,7 +1,9 @@
 ﻿#pragma once
 #include "Staff.h"
 
-namespace WANGBOYI {
+using WANGBOYI::Staff;
+
+namespace XIANGQIAOSHUN {
 	class Officialstaff :
 		public Staff
 	{
