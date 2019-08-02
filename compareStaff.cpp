@@ -1,5 +1,8 @@
 ﻿#include "compareStaff.h"
 
+using YUFEI::Tempstaff;
+using XIANGQIAOSHUN::Officialstaff;
+
 namespace XIANGQIAOSHUN {
 	//根据正式员工编号升序排序
 	bool comp_num_up(Officialstaff& s0, Officialstaff& s1)
