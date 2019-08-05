@@ -9,7 +9,6 @@
 #include "Functions.h"
 #include "menu.h"
 
-using namespace std;
 using namespace YUFEI;
 using namespace WANGBOYI;
 using namespace XIANGQIAOSHUN;

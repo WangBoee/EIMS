@@ -20,9 +20,7 @@ namespace WANGBOYI {
 		for (auto x : oStaffList)
 		{
 			if (ret != NULL)
-			{
-				*ret += 1;
-			}
+				* ret += 1;
 			if (x.m_get_num() == num)
 			{
 				cout << "找到员工：\n" << endl;
@@ -38,9 +36,7 @@ namespace WANGBOYI {
 		for (auto x : tStaffList)
 		{
 			if (ret != NULL)
-			{
-				*ret += 1;
-			}
+				* ret += 1;
 			if (x.m_get_num() == num)
 			{
 				cout << "找到员工：" << endl;
@@ -77,17 +73,14 @@ namespace WANGBOYI {
 		cout << "\n确认删除员工" << (tStaffList.begin() + i)->m_get_name() << "?\n\n0.取消\t1.确认\n";
 		cin >> opt;
 		inputCheck(opt);
-		if (opt == 1)
+		if (opt == 0)	//取消删除
+			cout << "已取消!" << endl;
+		else
 		{	//确认删除
 			tStaffList.erase(tStaffList.begin() + i);
 			cout << "已删除!" << endl;
-			system("ping 127.1 -n 2 >nul");	//暂停显示2秒
 		}
-		else if (opt == 0)
-		{	//取消删除
-			cout << "已取消!" << endl;
-			system("ping 127.1 -n  >nul");	//暂停显示2秒
-		}
+		system("pause");
 	}
 	//确认删除正式员工
 	void conformDelOfficial(int& i)
@@ -97,17 +90,14 @@ namespace WANGBOYI {
 			<< "?\n\n0.取消\t1.确认\n";	//显示员工姓名
 		cin >> opt;
 		inputCheck(opt);
-		if (opt == 1)
+		if (opt == 0)
+			cout << "已取消!" << endl;
+		else
 		{	//根据i的值确定需要删除的员工位置
 			oStaffList.erase(oStaffList.begin() + i);
 			cout << "已删除!" << endl;
-			system("ping 127.1 -n 2 >nul");	//暂停显示2秒
 		}
-		else if (opt == 0)
-		{
-			cout << "已取消!" << endl;
-			system("ping 127.1 -n 2 >nul");	//暂停显示2秒
-		}
+		system("pause");
 	}
 	//依次输出字符串所有字符
 	void print(const string& str)
