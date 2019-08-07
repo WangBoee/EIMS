@@ -18,7 +18,6 @@ namespace XIANGQIAOSHUN {
 		Officialstaff(string p_num, string p_name, bool p_sex, int p_age, float p_salary, string p_home, float p_all, float p_ann, float p_hou, float p_tax, float p_med);	//按顺序初始化参数，不包含实发工资
 		Officialstaff(string p_num, string p_name, bool p_sex, int p_age, float p_salary, string p_home, float p_all, float p_ann, float p_hou, float p_tax, float p_med, float p_real);	//按顺序初始化参数，包含实发工资
 		Officialstaff(const Officialstaff& T);	//拷贝构造函数
-		//Officialstaff(const Officialstaff&& T);	//移动构造函数
 		Officialstaff& operator=(const Officialstaff& T);	//重载 = 运算符
 		friend ostream& operator<<(ostream& os, Officialstaff& T);	//重载<<输出运算符
 

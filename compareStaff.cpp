@@ -6,7 +6,7 @@ using XIANGQIAOSHUN::Officialstaff;
 namespace XIANGQIAOSHUN {
 	//根据正式员工编号升序排序
 	bool comp_num_up(Officialstaff& s0, Officialstaff& s1)
-	{
+	{	//s0的编号小于s1编号，返回true，反之
 		return (s0.m_get_num() < s1.m_get_num());
 	}
 

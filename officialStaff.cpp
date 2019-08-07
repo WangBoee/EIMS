@@ -138,21 +138,21 @@ namespace XIANGQIAOSHUN {
 		cin >> m_tax;
 		cout << "请输入正式员工的医疗保险" << endl;
 		cin >> m_medical;
-		m_calculateSalary();
+		m_calculateSalary();	//计算实发工资
 	}
 
 	//显示信息
 	void Officialstaff::m_display(int mode)
 	{
 		if (mode == 1)
-		{
+		{	//横向输出员工信息
 			cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << (m_sex ? "男" : "女") << " "
 				<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
 				<< "津贴：" << m_allowance << " " << "养老金：" << m_annuity << " " << "住房公积金：" << m_fund << " "
 				<< "所得税：" << m_tax << " " << "医疗保险：" << m_medical << " " << "实发工资：" << m_real_salary << endl << endl;
 		}
 		else if (mode == 0)
-		{
+		{	//纵向输出员工信息
 			cout << "编号：" << m_num << endl
 				<< "姓名：" << m_name << endl
 				<< "性别：" << (m_sex ? "男" : "女") << endl

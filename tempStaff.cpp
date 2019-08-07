@@ -109,20 +109,20 @@ namespace YUFEI {
 		cin >> m_bonus;
 		cout << "请输入临时员工的所得税" << endl;
 		cin >> m_tax;
-		m_calculateSalary();
+		m_calculateSalary();	//计算实发工资
 	}
 
 	//显示信息
 	void Tempstaff::m_display(int mode)
 	{
 		if (mode == 1)
-		{
+		{	//横向输出员工信息
 			cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << (m_sex ? "男" : "女") << " "
 				<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
 				<< "奖金：" << m_bonus << " " << "所得税：" << m_tax << " " << "实发工资：" << m_real_salary << endl << endl;
 		}
 		else if (mode == 0)
-		{
+		{	//纵向输出员工信息
 			cout << "编号：" << m_num << endl
 				<< "姓名：" << m_name << endl
 				<< "性别：" << (m_sex ? "男" : "女") << endl
