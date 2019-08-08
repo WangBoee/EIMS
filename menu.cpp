@@ -20,7 +20,7 @@ namespace WANGBOYI {
 	void searchMenu()
 	{
 		string num;	//临时存储输入编号
-		int type(-1);
+		int type(-1);	//默认值，无意义
 		cout << "========查询员工信息=======" << endl << endl;
 		cout << "0.临时员工\n1.正式员工\n\n输入员工类型:";
 		cin >> type;
@@ -29,29 +29,29 @@ namespace WANGBOYI {
 		cin >> num;
 		switch (type)
 		{
-		case 0:
-			if (!findTempStaff(num))
-				cout << "未找到!\n";	//正式员工查找
+		case 0:	//临时员工查找
+			if (!findTempStaff(num))	//调用临时员工查找函数
+				cout << "未找到!\n";
 			break;
-		case 1:
-			if (!findOfficialStaff(num))
-				cout << "未找到!\n";	//临时员工查找
+		case 1:	//正式员工查找
+			if (!findOfficialStaff(num))	//调用查找函数
+				cout << "未找到!\n";
 			break;
 		}
-		system("pause");
+		system("pause");	//暂停，等待用户按下任意键
 	}
 
 	//添加员工菜单
 	void newStaffMenu()
 	{
 		int type;	//临时存储员工类型，0表示临时员工，1表示正式员工
-		string num;
+		string num;	//存储输入的编号
 		system("cls");
 		cout << "========录入新的员工=======" << endl << endl
 			<< "0.临时员工\n1.正式员工\n";
 		cout << "输入员工类型:";
-		cin >> type;
-		inputCheck(type);
+		cin >> type;	//存储员工类型
+		inputCheck(type);	//输入检查
 		cout << "输入编号：";
 		cin >> num;
 		if (type == 0)
@@ -59,14 +59,14 @@ namespace WANGBOYI {
 			if (findTempStaff(num))	//检查是否已存在对应员工
 				cout << "员工已存在!\n";
 			else
-				newTempStaff(num);
+				newTempStaff(num);	//不存在则添加新员工
 		}
 		else
 		{
 			if (findOfficialStaff(num))	//检查是否已存在对应员工
 				cout << "员工已存在!\n";
 			else
-				newOfficialStaff(num);
+				newOfficialStaff(num);	//不存在则添加新员工
 		}
 		system("pause");	//暂停，显示信息等待用户按键确认
 	}
@@ -86,24 +86,24 @@ namespace WANGBOYI {
 		{	//查找删除临时员工
 			cout << "输入员工编号:";
 			cin >> num;
-			if (findTempStaff(num, &i))	//若找到对应员工，再次确认是否删除
-				conformDelTemp(i);
+			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
+				conformDelTemp(i);	//若找到对应员工，再次确认是否删除
 			else
 			{	//未找到相应员工
 				cout << "未找到该员工!" << endl;
-				system("ping 127.1 -n 3 >nul");
+				system("ping 127.1 -n 3 >nul");	//暂停3秒后返回主菜单
 			}
 		}
 		else if (type == 1)
 		{	//查找删除正式员工
 			cout << "输入员工编号:";
 			cin >> num;
-			if (findOfficialStaff(num, &i))	//找到对应员工，再次确认是否删除
-				conformDelOfficial(i);
+			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
+				conformDelOfficial(i);	//找到对应员工，再次确认是否删除
 			else
 			{	//未找到相应员工
 				cout << "未找到该员工!" << endl;
-				system("ping 127.1 -n 3 >nul");
+				system("ping 127.1 -n 3 >nul");	//暂停3秒后返回主菜单
 			}
 		}
 	}
@@ -122,16 +122,15 @@ namespace WANGBOYI {
 		cout << "0.纵向显示员工信息\n1.横向显示员工信息\n默认纵向(0)\n";
 		cin >> type;
 		inputCheck(type);
-		//根据输入确定显示方式
 		cout << endl << "正式员工：\n";
 		for (auto it = oStaffList.begin(); it != oStaffList.end(); it++)
 		{	//显示正式员工信息
-			it->m_display(type);
+			it->m_display(type);	//根据输入确定显示方式
 		}
 		cout << endl << "临时员工：\n";
 		for (auto it = tStaffList.begin(); it != tStaffList.end(); it++)
 		{	//显示临时员工信息
-			it->m_display(type);
+			it->m_display(type);	//根据输入确定显示方式
 		}
 		system("pause");
 	}

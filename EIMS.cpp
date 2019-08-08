@@ -18,7 +18,7 @@ vector<Officialstaff> oStaffList;	//正式员工列表
 
 //主函数
 int main(void)
-{//分别从文件读取临时、正式员工数据
+{	//分别从文件读取临时、正式员工数据
 	readTSL();
 	readOSL();
 	int opt = -1;	//opt存储用户输入的操作，初值-1，无任何功能

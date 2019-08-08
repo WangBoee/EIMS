@@ -11,7 +11,6 @@ namespace YUFEI {
 		float m_tax;	//所得税
 		float m_real_salary;	//实际工资，计算所得，不要求输入
 	public:
-		//构造函数
 		Tempstaff();	//默认构造函数
 		Tempstaff(string p_num, string p_name, bool p_sex, int p_age, float p_salary, string p_home, float p_bon, float p_tax);	//按顺序初始化参数，不包含实发工资
 		Tempstaff(string p_num, string p_name, bool p_sex, int p_age, float p_salary, string p_home, float p_bon, float p_tax, float p_real);	//按顺序初始化参数，包含实发工资
