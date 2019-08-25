@@ -19,7 +19,7 @@ namespace YUFEI {
 		friend ostream& operator<<(ostream& os, Tempstaff& T);	//重载<<输出运算符
 
 		void m_input();	//手动输入数据
-		void m_display(int mode = 0);	//显示信息，0表示纵向(默认)，1表示横向
+		void m_display(int p_mode = 0);	//显示信息，0表示纵向(默认)，1表示横向
 		void m_calculateSalary();	//计算员工实发工资
 
 		//获取各成员变量值

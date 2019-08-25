@@ -9,7 +9,6 @@ using YUFEI::Tempstaff;
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
 
-//命名空间俞非
 namespace YUFEI {
 	//从文件读取临时员工信息
 	void readTSL()
