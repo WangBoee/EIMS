@@ -123,14 +123,14 @@ namespace WANGBOYI {
 		switch (type)
 		{
 		case 0:
-			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
+			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
 				editOS(i);	//编辑正式员工
 			else
 				cout << "员工不存在！\n";
 			system("pause");
 			break;
 		case 1:
-			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
+			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
 				editTS(i);	//编辑临时员工
 			else
 				cout << "员工不存在！\n";
@@ -147,7 +147,7 @@ namespace WANGBOYI {
 		cout << "========所有员工信息=======" << endl << endl
 			<< "0.默认列表顺序列出所有员工信息\n"
 			<< "1.根据员工编号列出所有员工信息\n"
-			<< "2.根据员工工资列出所有员工信息\n";
+			<< "2.根据员工工资列出所有员工信息\n" << "输入选择：";
 		cin >> type;
 		switch (type)
 		{
