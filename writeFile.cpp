@@ -7,7 +7,6 @@
 extern vector<Tempstaff> tStaffList;
 extern vector<Officialstaff> oStaffList;
 
-//命名空间俞非
 namespace YUFEI
 {
 	//以明文将所有临时员工信息存入文件
@@ -25,7 +24,6 @@ namespace YUFEI
 		}
 		tfp.close();	//关闭文件
 	}
-
 	//以明文将所有正式员工信息存入文件
 	void writeOSL()
 	{

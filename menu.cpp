@@ -110,27 +110,59 @@ namespace WANGBOYI {
 
 	//编辑员工菜单
 	void editMenu() {
-		//TO DO
-		;
+		int type, i = -1;	//type临时存储员工类型，0表示临时员工，1表示正式员工
+		string num;	//存储输入的编号
+		system("cls");
+		cout << "========修改员工信息=======" << endl << endl
+			<< "0.临时员工\n1.正式员工\n";
+		cout << "输入员工类型:";
+		cin >> type;	//存储员工类型
+		inputCheck(type);	//输入检查
+		cout << "输入编号：";
+		cin >> num;
+		switch (type)
+		{
+		case 0:
+			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
+				editOS(i);	//编辑正式员工
+			else
+				cout << "员工不存在！\n";
+			system("pause");
+			break;
+		case 1:
+			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
+				editTS(i);	//编辑临时员工
+			else
+				cout << "员工不存在！\n";
+			system("pause");
+			break;
+		}
 	}
 
 	//所有信息菜单
 	void checkAllMenu()
 	{
-		int type(-1);
+		int type(0);
 		system("cls");
-		cout << "0.纵向显示员工信息\n1.横向显示员工信息\n默认纵向(0)\n";
+		cout << "========所有员工信息=======" << endl << endl
+			<< "0.默认列表顺序列出所有员工信息\n"
+			<< "1.根据员工编号列出所有员工信息\n"
+			<< "2.根据员工工资列出所有员工信息\n";
 		cin >> type;
-		inputCheck(type);
-		cout << endl << "正式员工：\n";
-		for (auto it = oStaffList.begin(); it != oStaffList.end(); it++)
-		{	//显示正式员工信息
-			it->m_display(type);	//根据输入确定显示方式
-		}
-		cout << endl << "临时员工：\n";
-		for (auto it = tStaffList.begin(); it != tStaffList.end(); it++)
-		{	//显示临时员工信息
-			it->m_display(type);	//根据输入确定显示方式
+		switch (type)
+		{
+		case 0:
+			listDef();	//默认列表顺序列出员工信息
+			break;
+		case 1:
+			listNum();	//根据员工编号列出员工信息
+			break;
+		case 2:
+			listSal();	//根据员工工资列出员工信息
+			break;
+		default:
+			cout << "输入错误\n";
+			break;
 		}
 		system("pause");
 	}

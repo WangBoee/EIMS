@@ -113,15 +113,15 @@ namespace YUFEI {
 	}
 
 	//显示信息
-	void Tempstaff::m_display(int mode)
+	void Tempstaff::m_display(int p_mode)
 	{
-		if (mode == 1)
+		if (p_mode == 1)
 		{	//横向输出员工信息
 			cout << "编号：" << m_num << " " << "姓名：" << m_name << " " << "性别：" << (m_sex ? "男" : "女") << " "
 				<< "年龄：" << m_age << " " << "工资：" << m_salary << " " << "家庭住址：" << m_home << " "
 				<< "奖金：" << m_bonus << " " << "所得税：" << m_tax << " " << "实发工资：" << m_real_salary << endl << endl;
 		}
-		else if (mode == 0)
+		else if (p_mode == 0)
 		{	//纵向输出员工信息
 			cout << "编号：" << m_num << endl
 				<< "姓名：" << m_name << endl
@@ -144,8 +144,5 @@ namespace YUFEI {
 	}
 
 	//析构函数
-	Tempstaff::~Tempstaff()
-	{
-		;
-	}
+	Tempstaff::~Tempstaff() {}
 }

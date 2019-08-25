@@ -63,4 +63,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="tempStaffList.dat">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="officialStaffList.dat">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>

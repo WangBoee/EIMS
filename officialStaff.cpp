@@ -179,8 +179,5 @@ namespace XIANGQIAOSHUN {
 	}
 
 	//析构函数
-	Officialstaff::~Officialstaff()
-	{
-		;
-	}
+	Officialstaff::~Officialstaff() {}
 }

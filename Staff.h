@@ -3,7 +3,6 @@
 
 using namespace std;
 
-//命名空间王伯益
 namespace WANGBOYI {
 	//基类
 	class Staff
