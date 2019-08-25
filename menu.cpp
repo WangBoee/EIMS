@@ -48,7 +48,7 @@ namespace WANGBOYI {
 		string num;	//存储输入的编号
 		system("cls");
 		cout << "========录入新的员工=======" << endl << endl
-			<< "0.临时员工\n1.正式员工\n";
+			<< "0.正式员工\n1.临时员工\n";
 		cout << "输入员工类型:";
 		cin >> type;	//存储员工类型
 		inputCheck(type);	//输入检查
@@ -123,14 +123,14 @@ namespace WANGBOYI {
 		switch (type)
 		{
 		case 0:
-			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
+			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
 				editOS(i);	//编辑正式员工
 			else
 				cout << "员工不存在！\n";
 			system("pause");
 			break;
 		case 1:
-			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
+			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
 				editTS(i);	//编辑临时员工
 			else
 				cout << "员工不存在！\n";
