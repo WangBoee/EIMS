@@ -16,15 +16,15 @@ namespace YUFEI {
 	void readTSL()
 	{//文件tempStaffList.dat存储临时员工数据
 		string fn = "tempStaffList.dat";
-		if (_access(fn.c_str(), 0) != 0)	//如果文件夹不存在
+		if (_access(fn.c_str(), 0) != 0)		//如果文件夹不存在
 		{
-			ofstream fp(fn.c_str());
+			ofstream fp(fn.c_str());	//以写入方式创建文件
 			fp.close();
 		}
 		else
-		{
+		{	//文件已存在
 			ifstream tfp(fn);
-			tfp.seekg(0, ios::beg);	//定位文件位置指针于文件头部
+			//tfp.seekg(0, ios::beg);	//定位文件位置指针于文件头部
 			while (true)
 			{//临时变量，用于存储临时数据
 				string num;	//职工编号
@@ -36,12 +36,10 @@ namespace YUFEI {
 				float bonus;	//奖金
 				float tax;	//所得税
 				float real;	//实发工资
-
 				//从文件读取数据存入临时变量
 				tfp >> num >> name >> sex >> age >> salary >> home >> bonus >> tax >> real;
-				//当读到文件尾时跳出循环
 				if (tfp.eof())
-					break;
+					break;	//当读到文件尾时跳出循环
 				//用tfp读取的数据初始化一个临时对象
 				Tempstaff tmp(num, name, sex, age, salary, home, bonus, tax, real);
 				//存入临时员工列表
@@ -54,16 +52,15 @@ namespace YUFEI {
 	void readOSL()
 	{//文件officialStaffList.dat存储所有正式员工信息
 		string fn = "officialStaffList.dat";
-		if (_access(fn.c_str(), 0) != 0)	//如果文件夹不存在
+		if (_access(fn.c_str(), 0) != 0)		//如果文件夹不存在
 		{
-			ofstream fp(fn.c_str());
+			ofstream fp(fn.c_str());	//以写入方式创建文件
 			fp.close();
 		}
 		else
-		{
+		{	//文件已存在
 			ifstream ofp(fn);
-			ofp.seekg(0, ios::beg);	//定位文件位置指针于文件头部
-			while (true)
+			while (true)	//当读到文件尾时跳出循环
 			{//临时变量
 				string Num;	//职工编号
 				string Name;	//职工姓名
@@ -77,13 +74,11 @@ namespace YUFEI {
 				float Tax;	//所得税
 				float MedicalInsurance;	//医疗保险
 				float realS;	//实发工资
-
 				//从文件读取数据存入临时变量
 				ofp >> Num >> Name >> Sex >> Age >> Salary >> Home >> Allowance
 					>> Annuity >> HousingFund >> Tax >> MedicalInsurance >> realS;
-				//读到文件尾跳出循环
 				if (ofp.eof())
-					break;
+					break;	//当读到文件尾时跳出循环
 				//用ofp读取的数据初始化一个临时对象
 				Officialstaff tmp(Num, Name, Sex, Age, Salary, Home, Allowance, Annuity, HousingFund, Tax, MedicalInsurance, realS);
 				oStaffList.push_back(tmp);	//存入正式员工列表

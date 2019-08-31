@@ -112,8 +112,6 @@ namespace XIANGQIAOSHUN {
 	//手动输入信息
 	void Officialstaff::m_input()
 	{
-		cout << "请输入正式员工的编号" << endl;
-		cin >> m_num;
 		cout << "请输入正式员工的姓名" << endl;
 		cin.get();
 		getline(cin, m_name);

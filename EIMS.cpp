@@ -4,7 +4,6 @@
 //========================================
 /*  ----Copyright © 2019 STL真香 All Rights Reserved---- */
 //========================================
-/*  同目录下已生成用于存储员工数据的对应文件，同时文件中已有部分数据  */
 
 #include "Functions.h"
 #include "menu.h"
@@ -56,6 +55,7 @@ int main(void)
 	writeOSL();	//退出程序前分别将正式、临时员工信息写入文件
 	writeTSL();
 	print("----Copyright @ 2019 STL真香 All Rights Reserved----");
+	Sleep(1000);
 	return 0;
 }
 
