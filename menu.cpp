@@ -124,14 +124,14 @@ namespace WANGBOYI {
 		{
 		case 0:
 			if (findTempStaff(num, &i))	//传入参数为编号和标记位置的 i
-				editOS(i);	//编辑正式员工
+				editTS(i);	//编辑临时员工
 			else
 				cout << "员工不存在！\n";
 			system("pause");
 			break;
 		case 1:
 			if (findOfficialStaff(num, &i))	//传入参数为编号和标记位置的 i
-				editTS(i);	//编辑临时员工
+				editOS(i);	//编辑正式员工
 			else
 				cout << "员工不存在！\n";
 			system("pause");

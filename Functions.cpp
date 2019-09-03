@@ -126,6 +126,8 @@ namespace WANGBOYI {
 	{
 		Officialstaff temp;	//创建临时员工对象用于重新输入数据
 		cout << "重新输入员工" << (oStaffList.begin() + p_i)->m_get_name() << "(编号：" << (oStaffList.begin() + p_i)->m_get_num() << ")信息\n";
+		string num = (oStaffList.begin() + p_i)->m_get_num();
+		temp.m_set_num(num);
 		temp.m_input();
 		*(oStaffList.begin() + p_i) = temp;	//将重新输入的数据复制给原员工
 		cout << "完成!\n";
@@ -136,6 +138,8 @@ namespace WANGBOYI {
 	{
 		Tempstaff temp;	//创建临时员工对象用于重新输入数据
 		cout << "重新输入员工" << (tStaffList.begin() + p_i)->m_get_name() << "(编号：" << (tStaffList.begin() + p_i)->m_get_num() << ")信息\n";
+		string num = (tStaffList.begin() + p_i)->m_get_num();
+		temp.m_set_num(num);
 		temp.m_input();
 		*(tStaffList.begin() + p_i) = temp;	//将重新输入的数据复制给原员工
 		cout << "完成!\n";
